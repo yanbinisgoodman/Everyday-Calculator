@@ -1,21 +1,12 @@
 //
 //  ContentView.swift
 //  Title: Everyday Calculator
-//  Version: 0.5.1 (alpha)
+//  Version: 0.5.2 (alpha)
 //  Description: A basic calculator for iOS. Not ready for real world use. Calculations could be inaccurate.
 //
 //  Created by Brad Schneider on 5/31/21.
 //
 //  Version 0.5.1 is based on the iOS Academy YouTube video found at: https://www.youtube.com/watch?v=cMde7jhQlZI
-//
-//  To Do:  - Error handling (ie: divide by 0)
-//          - Negative, Percent, Decimal buttons
-//          - Use Floats not Ints
-//          - Textbox wrapping/scaling/clipping
-//          - Settings / Info Veiw
-//          - Test on iPad OS
-//          - Evaluate Widgets, Slideover, Apple Watch
-//          - Colors
 
 import SwiftUI
 
@@ -83,7 +74,7 @@ struct ContentView: View {
                     Spacer()
                     Text(value)
                         .bold()
-                        .font(.system(size: 100))
+                        .font(.system(size: 80))
                         .foregroundColor(.white)
                 }
                 .padding()
@@ -117,23 +108,23 @@ struct ContentView: View {
         case .add, .subtract, .multiply, .divide, .equal:
             if button == .add {
                 self.currentOperation = .add
-                self.runningNumber = Int(self.value) ?? 0
+                self.runningNumber = Int(Float(self.value) ?? 0)
             }
             else if button == .subtract {
                 self.currentOperation = .subtract
-                self.runningNumber = Int(self.value) ?? 0
+                self.runningNumber = Int(Float(self.value) ?? 0)
             }
             else if button == .multiply {
                 self.currentOperation = .multiply
-                self.runningNumber = Int(self.value) ?? 0
+                self.runningNumber = Int(Float(self.value) ?? 0)
             }
             else if button == .divide {
                 self.currentOperation = .divide
-                self.runningNumber = Int(self.value) ?? 0
+                self.runningNumber = Int(Float(self.value) ?? 0)
             }
             else if button == .equal {
-                let runningValue = self.runningNumber
-                let currentValue = Int(self.value) ?? 0
+                let runningValue = Float(self.runningNumber)
+                let currentValue = Float(self.value) ?? 0
                 switch self.currentOperation {
                 case .add: self.value = "\(runningValue + currentValue)"
                 case .subtract: self.value = "\(runningValue - currentValue)"
