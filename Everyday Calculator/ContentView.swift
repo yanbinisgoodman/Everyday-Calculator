@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  Title: Everyday Calculator
-//  Version: 0.5.2 (alpha)
+//  Version: 0.5.3 (alpha)
 //  Description: A basic calculator for iOS. Not ready for real world use. Calculations could be inaccurate.
 //
 //  Created by Brad Schneider on 5/31/21.
@@ -23,8 +23,8 @@ enum CalcButton: String {
     case zero = "0"
     case add = "+"
     case subtract = "-"
-    case multiply = "X"
-    case divide = "/"
+    case multiply = "x"
+    case divide = "÷"
     case equal = "="
     case clear = "AC"
     case decimal = "."
@@ -73,7 +73,7 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     Text(value)
-                        .bold()
+//                      .bold()
                         .font(.system(size: 80))
                         .foregroundColor(.white)
                 }
