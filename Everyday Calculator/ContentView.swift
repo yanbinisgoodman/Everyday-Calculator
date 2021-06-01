@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Title: Everyday Calculator
 //  Version: 0.5.3 (alpha)
-//  Description: A basic calculator for iOS. Not ready for real world use. Calculations could be inaccurate.
+//  Description: A basic calculator for iOS using Swift, Swift UI, and XCode 12.5. Not ready for real world use. Calculations could be inaccurate. Some funtions do not work.
 //
 //  Created by Brad Schneider on 5/31/21.
 //
