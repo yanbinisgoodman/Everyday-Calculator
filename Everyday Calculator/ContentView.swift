@@ -10,6 +10,8 @@
 
 import SwiftUI
 
+// Defining the buttons on the calculator.  Using enumeration to list out each button and it's value. Using an enumeration also allows the code to itterate through the list.
+
 enum CalcButton: String {
     case one = "1"
     case two = "2"
@@ -30,6 +32,8 @@ enum CalcButton: String {
     case decimal = "."
     case percent = "%"
     case negative = "-/+"
+
+// Defining the colors of the buttons.
     
     var buttonColor: Color {
         switch self {
@@ -43,9 +47,13 @@ enum CalcButton: String {
     }
 }
 
+// Defining the arithmetic operations.
+
 enum Operation {
     case add, subtract, multiply, divide, none
 }
+
+// Start of the main UI of the app.
 
 struct ContentView: View {
 
@@ -53,6 +61,8 @@ struct ContentView: View {
     @State var runningNumber = 0
     @State var currentOperation: Operation = .none
 
+// Array of the buttons.
+    
     let buttons: [[CalcButton]] = [
         [.clear, .negative, .percent, .divide],
         [.seven, .eight, .nine, .multiply],
